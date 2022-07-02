@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST_PORT:localhost:8888}
+  cloud:
+    config:
+      profile: ${PROFILE:test}
+    gateway:
+      routes:
+        - id: movieRoute
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/movies/**
+        - id: catalogRoute
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/catalog/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+info:
+  name: Servico de roteamento (API Gateway) para os demais servicos presentes no ecossistema da aplicacao
+  author: Jardel S. Oliveira
+  mail: jardeloliver197@gmail.com
+  severity: Alto
+
+
+
