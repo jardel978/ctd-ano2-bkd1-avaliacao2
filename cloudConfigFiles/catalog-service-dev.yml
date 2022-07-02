@@ -1,2 +1,25 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8086}
+
+rabbitmq:
+  username: ${RABBIT_USERNAME:guest}
+  password: ${RABBIT_PASSWORD:guest}
+  host: localhost
+  port: 5672 #15672
+zipkin:
+  base-url: http://zipkin:9411/
+
+spring:
+  data:
+    mongodb:
+      user: test
+      password: ${SENHA_DB:7890123}
+      database: avaliacao2_catalog
+      uri: mongodb://locallhost:27017/avaliacao2_catalog
+#      uri: mongodb://db-avaliacao2-catalog:27017/avaliacao2_catalog
+
+queue:
+  api-serie:
+    name: "serieQueue"
+  api-movie:
+    name: "movieQueue"

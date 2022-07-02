@@ -7,7 +7,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/jardel978/cloudConfigCenterAvaliacao
+          uri: https://github.com/jardel978/ctd-ano2-bkd1-avaliacao2
+          default-label: main
+#          search-paths:
+#            - 'cloudConfigFiles*'
+          search-paths: 'cloudConfigFiles*'
+
 eureka:
   instance:
     hostname: eureka-service
@@ -25,6 +30,7 @@ management:
     web:
       exposure:
         include: health,info
+
 info:
   name: Servico de configuracao dos demais servicos presentes no ecossistema da aplicacao
   author: Jardel S. Oliveira

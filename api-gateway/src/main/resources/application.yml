@@ -3,23 +3,65 @@ spring:
     name: api-gateway
   config:
     import: optional:configserver:http://${CONFIG_SERVER_HOST_PORT:localhost:8888}
+  zipkin:
+    base-url: http://zipkin-service:9411/
   cloud:
     config:
-      profile: ${PROFILE:test}
+      profile: ${PROFILE:dev}
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
         - id: movieRoute
-          uri: lb://MOVIE-SERVICE
+          uri: lb://MOVIE-SERVICE:8084
           predicates:
             - Path=/movies/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: movieService
+                fallbackUri: forward:/fallback/movies
+        - id: serieRoute
+          uri: lb://SERIE-SERVICE:8085
+          predicates:
+            - Path=/series/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: serieService
+                fallbackUri: forward:/fallback/series
         - id: catalogRoute
-          uri: lb://CATALOG-SERVICE
+          uri: lb://CATALOG-SERVICE:8086
           predicates:
             - Path=/catalog/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: catalogService
+                fallbackUri: forward:/fallback/catalog
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      recordExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.util.concurrent.TimeoutException
+        - java.io.IOException
+  instances:
+    apigateway:
+      baseConfig: default
+
 eureka:
+  instance:
+    hostname: eureka-service
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
+
 management:
   info:
     env:
@@ -28,6 +70,7 @@ management:
     web:
       exposure:
         include: health,info
+
 info:
   name: Servico de roteamento (API Gateway) para os demais servicos presentes no ecossistema da aplicacao
   author: Jardel S. Oliveira
