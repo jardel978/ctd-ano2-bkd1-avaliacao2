@@ -17,6 +17,13 @@ services:
       - zipkin
     ports:
       - "8761:8761"
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    ports:
+      - "8080:8080"
   config-service:
     build: ./config-server
     container_name: config-service
@@ -24,28 +31,52 @@ services:
       - eureka-server
     ports:
       - "8888:8888"
-#  product-service:
-#    build: microservices/product-service
-#    mem_limit: 512m
+  #  movie-service:
+  #    build: ./movie-service
+  #    mem_limit: 512m
+  #    ports:
+  #      - "8080:8080"
+  #    depends_on:
+  #      - eureka-server
+  #      - db_avaliacao2_movie
+  #  serie-service:
+  #    build: ./serie-service
+  #    mem_limit: 512m
+  #    ports:
+  #      - "8080:8080"
+  #    depends_on:
+  #      - eureka-server
+  #      - db-avaliacao2-serie
+  #  catalog-service:
+  #    build: ./catalog-service
+  #    mem_limit: 512m
+  #    ports:
+  #      - "8080:8080"
+  #    depends_on:
+  #      - eureka-server
+  #      - db-avaliacao2-catalog
+#  db_avaliacao2_movie:
+#    image: mysql:8.0
+#    container_name: "db_avaliacao2_movie"
 #    ports:
-#      - "8080:8080"
-#    depends_on:
-#      mongodb:
-#        condition: service_healthy#  product-service:
-#    build: microservices/product-service
-#    mem_limit: 512m
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      mongodb:
-#        condition: service_healthy
-#  user-service:
-#    build: microservices/user-service
-#    mem_limit: 512m
-#    ports:
-#      - "8080:8080"
-#  mongodb:
+#      - "3306:3306"
+#    volumes:
+#      - db:/var/lib/mysql
+#  db-avaliacao2-serie:
 #    image: mongo:4.4.2
+#    container_name: "db-avaliacao2-serie"
+#    mem_limit: 512m
+#    ports:
+#      - "27017:27017"
+#    command: mongod
+#      healthcheck:
+#        test: "mongo --eval 'db.stats().ok'"
+#        interval: 5s
+#        timeout: 2s
+#        retries: 60
+#  db-avaliacao2-catalog:
+#    image: mongo:4.4.2
+#    container_name: "db-avaliacao2-catalog"
 #    mem_limit: 512m
 #    ports:
 #      - "27017:27017"
