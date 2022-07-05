@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class ChaptersDTO implements Serializable {
 
     private static final long serialVersionUUID = 1L;

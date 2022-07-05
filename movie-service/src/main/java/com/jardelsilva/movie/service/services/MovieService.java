@@ -1,4 +1,4 @@
-package com.jardelsilva.movie.service.service;
+package com.jardelsilva.movie.service.services;
 
 import com.jardelsilva.movie.service.dto.MovieDTO;
 import com.jardelsilva.movie.service.model.Movie;

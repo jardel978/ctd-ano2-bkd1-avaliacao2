@@ -10,7 +10,7 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-  eureka-server:
+  eureka-service:
     build: eureka-server
     container_name: eureka-service
     restart: on-failure
@@ -26,41 +26,41 @@ services:
       - eureka-server
     ports:
       - "8888:8888"
-  api-gateway:
-    build: api-gateway
-    container_name: api-gateway
-    restart: on-failure
-    depends_on:
-      - config-service
-      - movie-service
-      - serie-service
-      - catalog-service
-    ports:
-      - "8080:8080"
-#      "<host>:<container>" a porta do container nao pode ser acessada
-  movie-service:
-    build: movie-service
-    restart: on-failure
-    ports:
-      - "8084:8084"
-    depends_on:
-      - db_avaliacao2_movie
-  serie-service:
-    build: serie-service
-    restart: on-failure
-    ports:
-      - "8085:8085"
-    depends_on:
-      - db-avaliacao2-serie
-  catalog-service:
-    build: catalog-service
-    restart: on-failure
-    ports:
-      - "8086:8086"
-    depends_on:
-      - movie-service
-      - serie-service
-      - db-avaliacao2-catalog
+#  api-gateway:
+#    build: api-gateway
+#    container_name: api-gateway
+#    restart: on-failure
+#    depends_on:
+#      - config-service
+#      - movie-service
+#      - serie-service
+#      - catalog-service
+#    ports:
+#      - "8080:8080"
+##      "<host>:<container>" a porta do container nao pode ser acessada
+#  movie-service:
+#    build: movie-service
+#    restart: on-failure
+#    ports:
+#      - "8084:8084"
+#    depends_on:
+#      - db_avaliacao2_movie
+#  serie-service:
+#    build: serie-service
+#    restart: on-failure
+#    ports:
+#      - "8085:8085"
+#    depends_on:
+#      - db-avaliacao2-serie
+#  catalog-service:
+#    build: catalog-service
+#    restart: on-failure
+#    ports:
+#      - "8086:8086"
+#    depends_on:
+#      - movie-service
+#      - serie-service
+#      - db-avaliacao2-catalog
 #  db_avaliacao2_movie:
 #    image: mysql:8.0
 #    container_name: "db_avaliacao2_movie"
@@ -68,27 +68,25 @@ services:
 #      - "3306:3306"
 #    volumes:
 #      - db:/var/lib/mysql
-#  db-avaliacao2-serie:
-#    image: mongo:4.4.2
-#    container_name: "db-avaliacao2-serie"
-#    mem_limit: 512m
-#    ports:
-#      - "27017:27017"
-#    command: mongod
-#      healthcheck:
-#        test: "mongo --eval 'db.stats().ok'"
-#        interval: 5s
-#        timeout: 2s
-#        retries: 60
-#  db-avaliacao2-catalog:
-#    image: mongo:4.4.2
-#    container_name: "db-avaliacao2-catalog"
-#    mem_limit: 512m
-#    ports:
-#      - "27017:27017"
-#    command: mongod
-#      healthcheck:
-#        test: "mongo --eval 'db.stats().ok'"
-#        interval: 5s
-#        timeout: 2s
-#        retries: 60
+  db-avaliacao2-serie:
+    image: mongo:4.4.2
+    container_name: "db-avaliacao2-serie"
+    ports:
+      - "27017:27017"
+    command: mongod
+    healthcheck:
+      test: "mongo --eval 'db.stats().ok'"
+      interval: 5s
+      timeout: 2s
+      retries: 60
+  db-avaliacao2-catalog:
+    image: mongo:4.4.2
+    container_name: "db-avaliacao2-catalog"
+    ports:
+      - "27018:27017"
+    command: mongod
+    healthcheck:
+      test: "mongo --eval 'db.stats().ok'"
+      interval: 5s
+      timeout: 2s
+      retries: 60

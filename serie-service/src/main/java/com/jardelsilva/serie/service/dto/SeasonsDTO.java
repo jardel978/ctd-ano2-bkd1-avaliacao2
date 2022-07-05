@@ -13,6 +13,7 @@ import java.util.Set;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class SeasonsDTO implements Serializable {
 
     private static final long serialVersionUUID = 1L;

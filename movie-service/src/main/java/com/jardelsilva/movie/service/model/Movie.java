@@ -10,6 +10,7 @@ import java.util.Objects;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_movie")
 public class Movie {

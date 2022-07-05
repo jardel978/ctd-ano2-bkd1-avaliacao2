@@ -1,9 +1,9 @@
 package com.jardelsilva.catalog.service.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,7 +14,7 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection ="seasons")
+@Document(collection = "seasons")
 public class Seasons {
 
     @Id

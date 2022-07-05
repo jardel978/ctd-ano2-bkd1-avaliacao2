@@ -1,9 +1,9 @@
 package com.jardelsilva.serie.service.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -13,6 +13,7 @@ import java.util.Set;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "series")
 public class Series {
 

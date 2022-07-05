@@ -16,12 +16,12 @@ public class CatalogListner {
     @Autowired
     private GenresService genresService;
 
-    @RabbitListener(queues = {"${queue.api-serie.name}"})
+    @RabbitListener(queues = {"${queues.api-serie.name}"})
     public void receiveSeriesMessage(@Payload SeriesDTO seriesDTO) {
         genresService.adicionarSerie(seriesDTO);
     }
 
-    @RabbitListener(queues = {"${queue.api-movie.name}"})
+    @RabbitListener(queues = {"${queues.api-movie.name}"})
     public void receiveSeriesMessage(@Payload MoviesDTO moviesDTO) {
         genresService.adicionarMovie(moviesDTO);
     }

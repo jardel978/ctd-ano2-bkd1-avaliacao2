@@ -1,11 +1,6 @@
 server:
   port: ${PORT:8085}
 
-rabbitmq:
-  username: ${RABBIT_USERNAME:guest}
-  password: ${RABBIT_PASSWORD:guest}
-  host: localhost
-  port: 5672 #15672
 zipkin:
   base-url: http://zipkin:9411/
 
@@ -15,9 +10,10 @@ spring:
       user: test
       password: ${SENHA_DB:7890123}
       database: avaliacao2_serie
-      uri: mongodb://locallhost:27017/avaliacao2_serie
-#      uri: mongodb://db-avaliacao2-serie:27017/avaliacao2_serie
-
-queue:
-  api-serie:
-    name: "serieQueue"
+#      uri: mongodb://locallhost:27017/avaliacao2_serie
+      uri: mongodb://db-avaliacao2-serie:27017/avaliacao2_serie
+  rabbitmq:
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    host: localhost
+    port: 5672 #15672

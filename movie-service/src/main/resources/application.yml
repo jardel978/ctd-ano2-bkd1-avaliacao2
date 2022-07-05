@@ -2,19 +2,25 @@ spring:
   application:
     name: movie-service
   config:
-    import: optional:configserver:http://${CONFIG_SERVER_HOST_PORT:localhost:8888}
+#    import: optional:configserver:http://config-service:8888
+    import: optional:configserver:http://localhost:8888
   cloud:
     config:
       profile: ${PROFILE:dev}
 
 eureka:
   instance:
-    hostname: eureka-service
+    hostname: localhost
+#    hostname: eureka-service
   client:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka
+
+queue:
+  api-movie:
+    name: movieQueue
 
 management:
   info:

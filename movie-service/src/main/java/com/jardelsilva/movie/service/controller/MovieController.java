@@ -2,7 +2,7 @@ package com.jardelsilva.movie.service.controller;
 
 import com.jardelsilva.movie.service.config.RabbitMQSenderConfig;
 import com.jardelsilva.movie.service.dto.MovieDTO;
-import com.jardelsilva.movie.service.service.MovieService;
+import com.jardelsilva.movie.service.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

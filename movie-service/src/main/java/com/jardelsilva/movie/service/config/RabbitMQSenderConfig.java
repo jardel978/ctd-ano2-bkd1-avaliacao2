@@ -18,7 +18,7 @@ public class RabbitMQSenderConfig {
     private RabbitTemplate rabbitTemplate;
 
     @Bean
-    public Queue serieQueue() {
+    public Queue movieQueue() {
         return new Queue(movieQueue, false);
     }
 

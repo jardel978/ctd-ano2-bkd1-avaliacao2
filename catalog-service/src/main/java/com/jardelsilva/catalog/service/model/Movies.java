@@ -1,9 +1,9 @@
 package com.jardelsilva.catalog.service.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import java.util.Objects;
 
 @Getter
