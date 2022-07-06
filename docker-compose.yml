@@ -26,51 +26,63 @@ services:
       - eureka-server
     ports:
       - "8888:8888"
-#  api-gateway:
-#    build: api-gateway
-#    container_name: api-gateway
-#    restart: on-failure
-#    depends_on:
-#      - config-service
-#      - movie-service
-#      - serie-service
-#      - catalog-service
-#    ports:
-#      - "8080:8080"
-##      "<host>:<container>" a porta do container nao pode ser acessada
-#  movie-service:
-#    build: movie-service
-#    restart: on-failure
-#    ports:
-#      - "8084:8084"
-#    depends_on:
-#      - db_avaliacao2_movie
-#  serie-service:
-#    build: serie-service
-#    restart: on-failure
-#    ports:
-#      - "8085:8085"
-#    depends_on:
-#      - db-avaliacao2-serie
-#  catalog-service:
-#    build: catalog-service
-#    restart: on-failure
-#    ports:
-#      - "8086:8086"
-#    depends_on:
-#      - movie-service
-#      - serie-service
-#      - db-avaliacao2-catalog
-#  db_avaliacao2_movie:
-#    image: mysql:8.0
-#    container_name: "db_avaliacao2_movie"
-#    ports:
-#      - "3306:3306"
-#    volumes:
-#      - db:/var/lib/mysql
+  #  api-gateway:
+  #    build: api-gateway
+  #    container_name: api-gateway
+  #    restart: on-failure
+  #    depends_on:
+  #      - config-service
+  #      - movie-service
+  #      - serie-service
+  #      - catalog-service
+  #    ports:
+  #      - "8080:8080"
+  ##      "<host>:<container>" a porta do container nao pode ser acessada
+  #  movie-service:
+  #    build: movie-service
+  #    restart: on-failure
+  #    ports:
+  #      - "8084:8084"
+  #    depends_on:
+  #      - db_avaliacao2_movie
+  #  serie-service:
+  #    build: serie-service
+  #    restart: on-failure
+  #    ports:
+  #      - "8085:8085"
+  #    depends_on:
+  #      - db-avaliacao2-serie
+  #  catalog-service:
+  #    build: catalog-service
+  #    restart: on-failure
+  #    ports:
+  #      - "8086:8086"
+  #    depends_on:
+  #      - movie-service
+  #      - serie-service
+  #      - db-avaliacao2-catalog
+  db-avaliacao2-movie:
+    image: mysql:8.0
+    container_name: "db_avaliacao2_movie"
+    environment:
+      MYSQL_ROOT_PASSWORD: 7890123
+      MYSQL_DATABASE: avaliacao2-serie
+      MYSQL_USER: jardel
+      MYSQL_PASSWORD: 7890123
+    volumes:
+      - ./mysql-movie-volume:/var/lib/mysql # possibilidade de usar mariaDB - MySql pode dar problemas com volumes docker
+    ports:
+      - "3307:3306"
   db-avaliacao2-serie:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-serie"
+    environment:
+      MONGO_INITDB_DATABASE: avaliacao2_serie
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: 7890123
+    volumes:
+      #      - ./init-mongo-serie.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./mongo-serie-volume:/data/db
     ports:
       - "27017:27017"
     command: mongod
@@ -82,6 +94,13 @@ services:
   db-avaliacao2-catalog:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-catalog"
+    environment:
+      MONGO_INITDB_DATABASE: avaliacao2_catalog
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: 7890123
+    volumes:
+      - ./init-mongo-catalog.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./mongo-catalog-volume:/data/db
     ports:
       - "27018:27017"
     command: mongod
@@ -90,3 +109,5 @@ services:
       interval: 5s
       timeout: 2s
       retries: 60
+volumes:
+  step:

@@ -11,6 +11,7 @@ spring:
       password: ${SENHA_DB:7890123}
       database: avaliacao2_serie
 #      uri: mongodb://locallhost:27017/avaliacao2_serie
+#      uri: mongodb://YourUsername:YourPasswordHere@127.0.0.1:27017/your-database-name
       uri: mongodb://db-avaliacao2-serie:27017/avaliacao2_serie
   rabbitmq:
     username: ${RABBIT_USERNAME:guest}
