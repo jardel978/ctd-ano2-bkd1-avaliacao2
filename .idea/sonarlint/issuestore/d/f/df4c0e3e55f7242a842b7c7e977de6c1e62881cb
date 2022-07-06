@@ -1,8 +1,0 @@
-
-o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(›ìÌ
-k
-java:S1128"IRemove this unused import 'com.jardelsilva.catalog.service.model.Movies'.(œÑÀëıÿÿÿÿ8Ñ»Âåœ0
-f
-java:S1128"IRemove this unused import 'com.jardelsilva.catalog.service.model.Series'.(î™Ã¸8ÌİÂåœ0
-J
-java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8‘ŠÃåœ0

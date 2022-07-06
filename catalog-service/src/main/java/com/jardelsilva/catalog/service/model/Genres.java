@@ -3,8 +3,8 @@ package com.jardelsilva.catalog.service.model;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,10 +12,10 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection ="genres")
+@Document(collection = "genres")
 public class Genres {
 
-    private Set<Movies> movies = new HashSet<>();
-    private Set<Series> series = new HashSet<>();
+    private List<Movies> movies = new ArrayList<>();
+    private List<Series> series = new ArrayList<>();
 
 }

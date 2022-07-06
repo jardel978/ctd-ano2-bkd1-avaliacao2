@@ -1,12 +1,9 @@
 package com.jardelsilva.catalog.service.dto;
 
-import com.jardelsilva.catalog.service.model.Movies;
-import com.jardelsilva.catalog.service.model.Series;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,7 +15,7 @@ public class GenresDTO implements Serializable {
 
     private static final long serialVersionUUID = 1L;
 
-    private Set<MoviesDTO> movies;
-    private Set<SeriesDTO> series;
+    private List<MoviesDTO> movies;
+    private List<SeriesDTO> series;
 
 }

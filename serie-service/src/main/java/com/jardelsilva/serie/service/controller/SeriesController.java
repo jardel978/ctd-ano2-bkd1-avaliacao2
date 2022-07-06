@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/series")
 public class SeriesController {
@@ -23,8 +25,8 @@ public class SeriesController {
     private RabbitMQSenderConfig rabbitMQSenderConfig;
 
     @GetMapping("/{genre}")
-    public ResponseEntity<?> listarSeriesPorGenero(@PathVariable(value = "genre") String genre) {
-        return ResponseEntity.status(HttpStatus.OK).body(seriesService.listarSeriesPorGenero(genre));
+    public List<SeriesDTO> listarSeriesPorGenero(@PathVariable(value = "genre") String genre) {
+        return seriesService.listarSeriesPorGenero(genre);
     }
 
     @PostMapping

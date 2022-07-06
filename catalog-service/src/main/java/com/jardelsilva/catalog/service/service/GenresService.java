@@ -10,6 +10,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GenresService {
 
@@ -44,8 +46,14 @@ public class GenresService {
         moviesRepository.save(moviesModel);
     }
 
-    public Object listarSeriesPorGenero(String genre) {
-        return seriesFeing.getMovieByGenre(genre);
+    public List<SeriesDTO> listarSeriesPorGenero(String genre) {
+        return seriesFeing.getSeriesByGenre(genre);
     }
+
+    public List<MoviesDTO> listarMoviesPorGenero(String genre) {
+        return moviesRepository.findAllByGenreContains(genre);
+    }
+
+
 
 }
