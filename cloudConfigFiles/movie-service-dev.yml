@@ -20,7 +20,7 @@ spring:
     username: ${RABBIT_USERNAME:guest}
     password: ${RABBIT_PASSWORD:guest}
     host: localhost
-    port: 5672 #15672
+    port: 5672
 
   #apenas para gerar o create.sql na root para popular-mos o schema no postgres
 #  properties:
