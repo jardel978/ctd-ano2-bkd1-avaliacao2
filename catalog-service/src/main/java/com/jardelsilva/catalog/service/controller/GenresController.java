@@ -2,6 +2,7 @@ package com.jardelsilva.catalog.service.controller;
 
 import com.jardelsilva.catalog.service.service.GenresService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,17 @@ public class GenresController {
     @Autowired
     private GenresService genresService;
 
+    @Value("${message}")
+    public String message;
+
     @GetMapping("/{genre}")
     public ResponseEntity<?> listarSeriesPorGenero(@PathVariable(value = "genre") String genre) {
         return ResponseEntity.status(HttpStatus.OK).body(genresService.listarSeriesPorGenero(genre));
+    }
+
+    @GetMapping
+    public String test() {
+        return message;
     }
 
 

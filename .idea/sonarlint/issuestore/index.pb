@@ -377,8 +377,6 @@ E
 eureka-server/pom.xml,b\3\b39ae52d769ea03b699b5602439afd875433c8a7
 P
  cloudConfigFiles/application.yml,3\d\3d42a2580a1014ef8dc40714e5090a2ed23c6985
-T
-$cloudConfigFiles/api-gateway-dev.yml,b\9\b996a285f9318e2eeec14128360c21848539fc58
 ê
 `config-server/src/main/java/com/jardelSilva/avaliacao1/configServer/ConfigServerApplication.java,2\c\2ce951b2e497c538600a917a99e86e90a6ae56f5
 F
@@ -631,8 +629,6 @@ L.idea/libraries/Maven__io_github_resilience4j_resilience4j_reactor_1_7_0.xml,c
 Rcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/ChaptersDTO.java,1\9\19d45db7cd8a615f05cb195a7c4992d086f76bcd
 í
 bapi-gateway/src/main/java/com/jardelSilva/avaliacao1/apiGateway/controller/FallBackController.java,9\8\9877f281d2610ce82919b42ebc4d396b8f74d2f6
-é
-^catalog-service/src/main/java/com/jardelsilva/catalog/service/controller/GenresController.java,7\2\727192c8242dde692dfc30f171e78053b518b3ea
 Ä
 Pcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/GenresDTO.java,d\f\df4c0e3e55f7242a842b7c7e977de6c1e62881cb
 à
@@ -673,8 +669,6 @@ C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 ä
 Zmovie-service/src/main/java/com/jardelsilva/movie/service/repository/IMovieRepository.java,f\2\f2033b7994b6e8a21edfc4a43d2789af14eebbd8
-s
-C.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_9_Final.xml,b\5\b5ffb1d74bb1697f3827bf7d2efd5a512fc28ddf
 ä
 Zapi-gateway/src/main/java/com/jardelSilva/avaliacao1/apiGateway/ApiGatewayApplication.java,f\2\f23a51d611b907f4b1a2b2d303a0af2833b8e13e
 à
@@ -687,8 +681,6 @@ Mserie-service/src/main/java/com/jardelsilva/serie/service/model/Chapters.java,
 Nserie-service/src/main/java/com/jardelsilva/serie/service/dto/ChaptersDTO.java,d\f\dfb9d62c47e076b61c2de1d9623bd1fa4bfb500d
 z
 Jmovie-service/src/main/java/com/jardelsilva/movie/service/model/Movie.java,9\f\9f9bbe7388a0332198f8b174eaa26d86d39b5be4
-â
-Ymovie-service/src/main/java/com/jardelsilva/movie/service/controller/MovieController.java,3\6\36a3ece9e1fc0d2e1a10702b19b9b04251a7952d
 {
 Kmovie-service/src/main/java/com/jardelsilva/movie/service/dto/MovieDTO.java,4\1\41b17e52a90c14fce253cb06d3efe6fc980480f0
 

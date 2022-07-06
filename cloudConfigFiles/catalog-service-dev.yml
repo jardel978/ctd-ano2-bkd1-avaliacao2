@@ -10,10 +10,13 @@ spring:
       user: test
       password: ${SENHA_DB:7890123}
       database: avaliacao2_catalog
-#      uri: mongodb://locallhost:27018/avaliacao2_catalog
-      uri: mongodb://db-avaliacao2-catalog:27018/avaliacao2_catalog
+      uri: mongodb://locallhost:27018/avaliacao2_catalog
+#      uri: mongodb://test:7890123@127.0.0.1:27017/avaliacao2_catalog
+#      uri: mongodb://db-avaliacao2-catalog:27018/avaliacao2_catalog
   rabbitmq:
     username: ${RABBIT_USERNAME:guest}
     password: ${RABBIT_PASSWORD:guest}
     host: localhost
     port: 5672 #15672
+
+message: Olá mundo - Catalog!
