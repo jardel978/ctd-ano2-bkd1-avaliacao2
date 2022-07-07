@@ -377,8 +377,6 @@ E
 eureka-server/pom.xml,b\3\b39ae52d769ea03b699b5602439afd875433c8a7
 P
  cloudConfigFiles/application.yml,3\d\3d42a2580a1014ef8dc40714e5090a2ed23c6985
-ê
-`config-server/src/main/java/com/jardelSilva/avaliacao1/configServer/ConfigServerApplication.java,2\c\2ce951b2e497c538600a917a99e86e90a6ae56f5
 F
 api-gateway/Dockerfile,9\5\9548e2ce3bdfe112d8c757987e1beebc1ecab5ed
 f
@@ -671,8 +669,6 @@ Ocatalog-service/src/main/java/com/jardelsilva/catalog/service/model/Movies.java
 Tmovie-service/src/main/java/com/jardelsilva/movie/service/services/MovieService.java,b\c\bcb9582724f0f6ccf3f95507174e7d2293ef280d
 G
 catalog-service/pom.xml,a\5\a53789dc44af37243dacf253849d0d8fefa6fa76
-E
-movie-service/pom.xml,c\6\c6ee5a26a6f30c87e488e3b6002abb17033d2628
 E
 serie-service/pom.xml,b\c\bc1b91ecd37a3b163305fe53a6fd86b01bff80ce
 Ä

@@ -22,8 +22,8 @@ public class GenresController {
     @Autowired
     private GenresService genresService;
 
-    @Value("${message}")
-    public String message;
+//    @Value("${message}")
+//    public String message;
 
     @GetMapping("/{genre}")
     public ResponseEntity<?> listarSeriesMoviesPorGenero(@PathVariable(value = "genre") String genre) {
@@ -36,10 +36,10 @@ public class GenresController {
         return ResponseEntity.status(HttpStatus.OK).body(genresDTO);
     }
 
-    @GetMapping
-    public String test() {
-        return message;
-    }
+//    @GetMapping
+//    public String test() {
+//        return message;
+//    }
 
 
 }
