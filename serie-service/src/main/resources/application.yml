@@ -2,16 +2,16 @@ spring:
   application:
     name: serie-service
   config:
-#    import: optional:configserver:http://config-service:8888
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://config-service:8888
+#    import: optional:configserver:http://localhost:8888
   cloud:
     config:
       profile: ${PROFILE:dev}
 
 eureka:
   instance:
-#    hostname: eureka-service
-    hostname: localhost
+    hostname: eureka-service
+#    hostname: localhost
   client:
     registerWithEureka: true
     fetchRegistry: true
