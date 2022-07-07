@@ -64,27 +64,30 @@ services:
   db-avaliacao2-movie:
     image: mysql:8.0
     container_name: "db_avaliacao2_movie"
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 7890123
       MYSQL_DATABASE: avaliacao2-serie
       MYSQL_USER: jardel
       MYSQL_PASSWORD: 7890123
     volumes:
+#      - ./mysql-movie-init.sql:/docker-entrypoint-initdb.d
       - ./mysql-movie-volume:/var/lib/mysql # possibilidade de usar mariaDB - MySql pode dar problemas com volumes docker
     ports:
       - "3307:3306"
   db-avaliacao2-serie:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-serie"
+    restart: always
     environment:
       MONGO_INITDB_DATABASE: avaliacao2_serie
       MONGO_INITDB_ROOT_USERNAME: test
       MONGO_INITDB_ROOT_PASSWORD: 7890123
     volumes:
-      #      - ./init-mongo-serie.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./mongo-serie-init.js:/docker-entrypoint-initdb.d/mongo-serie-init.js:ro
       - ./mongo-serie-volume:/data/db
     ports:
-      - "27017:27017"
+      - "27018:27017"
     command: mongod
     healthcheck:
       test: "mongo --eval 'db.stats().ok'"
@@ -94,20 +97,43 @@ services:
   db-avaliacao2-catalog:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-catalog"
+    restart: always
     environment:
       MONGO_INITDB_DATABASE: avaliacao2_catalog
       MONGO_INITDB_ROOT_USERNAME: test
       MONGO_INITDB_ROOT_PASSWORD: 7890123
     volumes:
-      - ./init-mongo-catalog.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./mongo-catalog-init.js:/docker-entrypoint-initdb.d/mongo-catalog-init.js:ro
       - ./mongo-catalog-volume:/data/db
     ports:
-      - "27018:27017"
+      - "27019:27017"
     command: mongod
     healthcheck:
       test: "mongo --eval 'db.stats().ok'"
       interval: 5s
       timeout: 2s
       retries: 60
+#  mongo-express-series:
+#    image: mongo-express
+#    container_name: "mongo-express-series"
+#    restart: always
+#    environment:
+#      - ME_CONFIG_MONGODB_SERVER: db-avaliacao2-serie
+#      - ME_CONFIG_MONGODB_PORT: 27017
+#      - ME_CONFIG_MONGODB_ADMINUSERNAME: test
+#      - ME_CONFIG_MONGODB_ADMINPASSWORD: 7890123
+#    ports:
+#      - "8081:8081"
+#  mongo-express-catalog:
+#    image: mongo-express
+#    container_name: "mongo-express-catalog"
+#    restart: always
+#    environment:
+#      - ME_CONFIG_MONGODB_SERVER: db-avaliacao2-catalog
+#      - ME_CONFIG_MONGODB_PORT: 27017
+#      - ME_CONFIG_MONGODB_ADMINUSERNAME: test
+#      - ME_CONFIG_MONGODB_ADMINPASSWORD: 7890123
+#    ports:
+#      - "8082:8081"
 volumes:
   step:

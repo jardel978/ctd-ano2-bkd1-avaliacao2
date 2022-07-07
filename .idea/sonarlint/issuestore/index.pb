@@ -703,8 +703,6 @@ m
 =mysql-movie-volume/performance_schema/performance_time_99.sdi,0\2\028179a5ec44d31ec0ffc054df64106251d5c4b3
 m
 =mysql-movie-volume/performance_schema/objects_summary__98.sdi,5\5\557dfd54d080d7f3a57c3b32eee68cdd86b3d0c4
-P
- mongo-catalog-volume/mongod.lock,3\6\362c9b28d6a4a6781dca040331b004c15b27d53f
 T
 $mongo-catalog-volume/WiredTiger.lock,4\3\4370f1013235a750eb0ea71de39eb3d851ff5351
 O
@@ -713,8 +711,6 @@ l
 <mysql-movie-volume/performance_schema/mutex_instances_97.sdi,1\5\15c6779065ea13165a8a92bdce23ab2460f3d143
 M
 mongo-serie-volume/WiredTiger,c\a\ca143b03b092bab6b5af66c8d84d8611ef72cb96
-N
-mongo-serie-volume/mongod.lock,8\d\8d876cb7ab973df476f209d01da2e0d0e4142b4d
 n
 >mysql-movie-volume/performance_schema/replication_appl_167.sdi,7\1\71f1d8950d3955355371338b4ede17143591510c
 R
@@ -945,3 +941,21 @@ K
 Ymovie-service/src/main/java/com/jardelsilva/movie/service/controller/MovieController.java,3\6\36a3ece9e1fc0d2e1a10702b19b9b04251a7952d
 å
 \catalog-service/src/main/java/com/jardelsilva/catalog/service/CatalogServiceApplication.java,b\3\b3cd4d51e44da1cafba46c0a46c3b4322911b988
+Ü
+Vserie-service/src/main/java/com/jardelsilva/serie/service/SerieServiceApplication.java,e\b\eb2eafe9001bcf0252f2b328e8b6f677855d5eb1
+à
+Xcatalog-service/src/main/java/com/jardelsilva/catalog/service/rabbit/CatalogListner.java,a\f\af6d5f9cbb495eda9a4401e317977ce62b34c50e
+O
+mysql-movie-volume/binlog.index,c\f\cf61c714ef190d042e32b9b02ed6855dd3cb74b5
+
+Ocatalog-service/src/main/java/com/jardelsilva/catalog/service/model/Genres.java,f\d\fdc6fa639b21061b69111f90ba25886eae8d706c
+Ä
+Pcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/GenresDTO.java,d\f\df4c0e3e55f7242a842b7c7e977de6c1e62881cb
+à
+Xcatalog-service/src/main/java/com/jardelsilva/catalog/service/service/GenresService.java,e\6\e604680de68695426be8847523cc26bebb4ddaba
+è
+_catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/IMoviesRepository.java,7\7\771998a2534f809dc0e9e54d8991d578bcc1ce9c
+ê
+`catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/feing/ISeriesFeing.java,7\8\78d540a103fbf160e6bed9bb227fdcbab52df950
+ä
+Zserie-service/src/main/java/com/jardelsilva/serie/service/controller/SeriesController.java,8\f\8f0fa4707a3f010684a227d7cdc9a342bbe47cf1
