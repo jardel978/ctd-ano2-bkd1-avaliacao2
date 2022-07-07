@@ -42,7 +42,20 @@ spring:
               args:
                 name: catalogService
                 fallbackUri: forward:/fallback/catalog
-
+  security:
+    oauth2:
+      client:
+        #        provider:
+        #          google:
+        #            issuer-uri: https://account.google.com
+        registration:
+          google:
+            client-id: 319091204165-8uvj68q57tv7g8kh4mnt81sm2uhbhsv0.apps.googleusercontent.com
+            client-secret: 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
+#            client-secret: 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
+#            client-id: 406906485125-1plnfuuomv8cgedee080j4apfv4e4bot.apps.googleusercontent.com
+            scope: openid
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
 resilience4j.circuitbreaker:
   configs:
     default:

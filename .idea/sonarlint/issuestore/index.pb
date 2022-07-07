@@ -651,8 +651,6 @@ Zmovie-service/src/main/java/com/jardelsilva/movie/service/config/RabbitTemplate
 Qcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/SeasonsDTO.java,d\0\d09c675e5b2ced08de75c91f898f3cdbbe575946
 Ä
 Pcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/SeriesDTO.java,5\9\59f76219eb2790a546bdf8c935f9ce6634e69bc4
-C
-api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 ä
 Zmovie-service/src/main/java/com/jardelsilva/movie/service/repository/IMovieRepository.java,f\2\f2033b7994b6e8a21edfc4a43d2789af14eebbd8
 ä
@@ -697,8 +695,6 @@ Zserie-service/src/main/java/com/jardelsilva/serie/service/config/RabbitTemplate
 Zmovie-service/src/main/java/com/jardelsilva/movie/service/config/RabbitMQSenderConfig.java,f\4\f4484a663764cad4eb454a49f266ecc6ba9d0dab
 ä
 Zserie-service/src/main/java/com/jardelsilva/serie/service/config/RabbitMQSenderConfig.java,9\f\9f3e1f5e89dd3a354cc1e36b805338ac9a60fe04
-T
-$cloudConfigFiles/api-gateway-dev.yml,b\9\b996a285f9318e2eeec14128360c21848539fc58
 m
 =mysql-movie-volume/performance_schema/performance_time_99.sdi,0\2\028179a5ec44d31ec0ffc054df64106251d5c4b3
 m
@@ -955,7 +951,5 @@ Pcatalog-service/src/main/java/com/jardelsilva/catalog/service/dto/GenresDTO.jav
 Xcatalog-service/src/main/java/com/jardelsilva/catalog/service/service/GenresService.java,e\6\e604680de68695426be8847523cc26bebb4ddaba
 è
 _catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/IMoviesRepository.java,7\7\771998a2534f809dc0e9e54d8991d578bcc1ce9c
-ê
-`catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/feing/ISeriesFeing.java,7\8\78d540a103fbf160e6bed9bb227fdcbab52df950
 ä
 Zserie-service/src/main/java/com/jardelsilva/serie/service/controller/SeriesController.java,8\f\8f0fa4707a3f010684a227d7cdc9a342bbe47cf1
