@@ -1,0 +1,1 @@
+CREATE DATABASE IF NOT EXISTS avaliacao2_movie;
