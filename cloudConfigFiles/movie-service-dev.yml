@@ -5,17 +5,17 @@ zipkin:
   base-url: http://zipkin:9411/
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: ${SENHA_DB:7890123}
-    url: jdbc:mysql://db_avaliacao2_movie:33060/avaliacao2_movie?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimeZone=UTC
-#    url: jdbc:mysql://localhost:33061/avaliacao2_movie?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimeZone=UTC
-  jpa:
-    dialect: org.hibernate.dialect.MySQLDialect
-    hibernate.ddl-auto: update
-    generate-ddl: true
-    show-sql: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: ${SENHA_DB:7890123}
+#    url: jdbc:mysql://db_avaliacao2_movie:33060/avaliacao2_movie?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimeZone=UTC
+##    url: jdbc:mysql://localhost:33061/avaliacao2_movie?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimeZone=UTC
+#  jpa:
+#    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+#    hibernate.ddl-auto: update
+#    generate-ddl: true
+#    show-sql: true
   rabbitmq:
     username: ${RABBIT_USERNAME:guest}
     password: ${RABBIT_PASSWORD:guest}
