@@ -679,8 +679,6 @@ _catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/IMovie
 Zserie-service/src/main/java/com/jardelsilva/serie/service/controller/SeriesController.java,8\f\8f0fa4707a3f010684a227d7cdc9a342bbe47cf1
 Ñ
 Tserie-service/src/main/java/com/jardelsilva/serie/service/service/SeriesService.java,3\6\365f2c151e47d061ba6291979cac980dc394c226
-M
-dbScript/mysql-movie-init.sql,c\9\c9f15dd174f0adc696eba42732a9c2539a4c722c
 T
 $cloudConfigFiles/api-gateway-dev.yml,b\9\b996a285f9318e2eeec14128360c21848539fc58
 ê
