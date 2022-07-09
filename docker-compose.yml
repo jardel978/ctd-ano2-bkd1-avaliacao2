@@ -71,7 +71,7 @@ services:
       - ./dbScript:/docker-entrypoint-initdb.d/mysql-movie-init.sql
       - ./mysql-movie-volume:/var/lib/mysql # possibilidade de usar mariaDB - MySql pode dar problemas com volumes docker
     ports:
-      - "33061:33060"
+      - "3307:3306"
   db-avaliacao2-serie:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-serie"
@@ -85,12 +85,6 @@ services:
       - ./mongo-serie-volume:/data/db
     ports:
       - "27018:27017"
-    command: mongod
-    healthcheck:
-      test: "mongo --eval 'db.stats().ok'"
-      interval: 5s
-      timeout: 2s
-      retries: 60
   db-avaliacao2-catalog:
     image: mongo:4.4.2
     container_name: "db-avaliacao2-catalog"
@@ -104,12 +98,6 @@ services:
       - ./mongo-catalog-volume:/data/db
     ports:
       - "27019:27017"
-    command: mongod
-    healthcheck:
-      test: "mongo --eval 'db.stats().ok'"
-      interval: 5s
-      timeout: 2s
-      retries: 60
 #  mongo-express-series:
 #    image: mongo-express
 #    container_name: "mongo-express-series"
