@@ -2,6 +2,7 @@ package com.jardelsilva.serie.service.controller;
 
 import com.jardelsilva.serie.service.config.RabbitMQSenderConfig;
 import com.jardelsilva.serie.service.dto.SeriesDTO;
+import com.jardelsilva.serie.service.model.Series;
 import com.jardelsilva.serie.service.service.SeriesService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class SeriesController {
 
     @PostMapping
     public ResponseEntity<?> adicionarSerie(@RequestBody SeriesDTO seriesDTO) {
-        seriesService.adicionarSerie(seriesDTO);
-        rabbitMQSenderConfig.convertAndSendSeries(seriesDTO);
+        SeriesDTO series = seriesService.adicionarSerie(seriesDTO);
+        rabbitMQSenderConfig.convertAndSendSeries(series);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

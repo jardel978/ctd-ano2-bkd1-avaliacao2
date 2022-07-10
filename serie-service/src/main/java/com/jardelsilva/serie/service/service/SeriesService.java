@@ -1,6 +1,8 @@
 package com.jardelsilva.serie.service.service;
 
 import com.jardelsilva.serie.service.dto.SeriesDTO;
+import com.jardelsilva.serie.service.model.Chapters;
+import com.jardelsilva.serie.service.model.Seasons;
 import com.jardelsilva.serie.service.model.Series;
 import com.jardelsilva.serie.service.repository.IChaptersRepository;
 import com.jardelsilva.serie.service.repository.ISeasonsRepository;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -38,11 +41,22 @@ public class SeriesService {
         return series.stream().map(serie -> modelMapper.map(serie, SeriesDTO.class)).collect(Collectors.toList());
     }
 
-    public void adicionarSerie(SeriesDTO seriesDTO) {
+    public SeriesDTO adicionarSerie(SeriesDTO seriesDTO) {
         log.info(restTemplate.getForObject("http://serie-service:8085/series/", String.class));
         Series seriesModel = modelMapper.map(seriesDTO, Series.class);
-        seriesModel.getSeasons().forEach(season -> seasonsRepository.save(season));
-        seriesRepository.save(seriesModel);
+
+        Set<Seasons> seasonsSet = seriesDTO.getSeasons().stream().map(seasonsDTO -> {
+            Seasons seasonsModel = modelMapper.map(seasonsDTO, Seasons.class);
+            Set<Chapters> chaptersSet = seasonsDTO.getChapters().stream().map(chapterDTO -> {
+                Chapters chaptersModel = modelMapper.map(chapterDTO, Chapters.class);
+                return chaptersRepository.save(chaptersModel);
+            }).collect(Collectors.toSet());
+            seasonsModel.setChapters(chaptersSet);
+            return seasonsRepository.save(seasonsModel);
+        }).collect(Collectors.toSet());
+        seriesModel.setSeasons(seasonsSet);
+        Series seriesBase = seriesRepository.save(seriesModel);
+        return modelMapper.map(seriesBase, SeriesDTO.class);
     }
 
 
