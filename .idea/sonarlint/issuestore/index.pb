@@ -645,8 +645,6 @@ Ocatalog-service/src/main/java/com/jardelsilva/catalog/service/model/Genres.java
 _catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/IMoviesRepository.java,7\7\771998a2534f809dc0e9e54d8991d578bcc1ce9c
 T
 $cloudConfigFiles/api-gateway-dev.yml,b\9\b996a285f9318e2eeec14128360c21848539fc58
-ê
-`catalog-service/src/main/java/com/jardelsilva/catalog/service/repository/feing/ISeriesFeing.java,7\8\78d540a103fbf160e6bed9bb227fdcbab52df950
 ì
 capi-gateway/src/main/java/com/jardelSilva/avaliacao1/apiGateway/config/security/SecurityConfig.java,0\d\0d0d46fee39cbbaea13d0fccfccb176de1396009
 ê
@@ -663,10 +661,6 @@ N
 dbScript/mongo-catalog-init.js,1\7\17fef21c240c38ea4fca1c0496754e38d4c7e3d6
 Ü
 Vserie-service/src/main/java/com/jardelsilva/serie/service/SerieServiceApplication.java,e\b\eb2eafe9001bcf0252f2b328e8b6f677855d5eb1
-G
-catalog-service/pom.xml,a\5\a53789dc44af37243dacf253849d0d8fefa6fa76
-E
-serie-service/pom.xml,b\c\bc1b91ecd37a3b163305fe53a6fd86b01bff80ce
 J
 catalog-service/Dockerfile,c\0\c0f321e0f90c28ad6ef5edcb2d368cddad9563f8
 H
@@ -801,8 +795,6 @@ Zmovie-service/src/main/java/com/jardelsilva/movie/service/repository/IMovieRepo
 Kmovie-service/src/main/java/com/jardelsilva/movie/service/dto/MovieDTO.java,4\1\41b17e52a90c14fce253cb06d3efe6fc980480f0
 Ñ
 Tmovie-service/src/main/java/com/jardelsilva/movie/service/services/MovieService.java,b\c\bcb9582724f0f6ccf3f95507174e7d2293ef280d
-E
-movie-service/pom.xml,c\6\c6ee5a26a6f30c87e488e3b6002abb17033d2628
 ä
 Zmovie-service/src/main/java/com/jardelsilva/movie/service/config/RabbitMQSenderConfig.java,f\4\f4484a663764cad4eb454a49f266ecc6ba9d0dab
 ä
@@ -817,8 +809,6 @@ M
 dbScript/mysql-movie-init.sql,c\9\c9f15dd174f0adc696eba42732a9c2539a4c722c
 X
 (cloudConfigFiles/catalog-service-dev.yml,3\9\39be7a5a5ac4f222b8a9688958548a80a76ae060
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 V
 &cloudConfigFiles/serie-service-dev.yml,7\0\700bfb6a3a3b090b391879065ed7924754832cb8
 V
