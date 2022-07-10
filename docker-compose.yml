@@ -1,5 +1,6 @@
 version: '3.9'
-
+# Professor, fiz toda a implementação e consegui gerar o .jar de cada serviço aqui, porém não consegui executar o
+# Docker + 11 containers, navegador para autenticar, Postmam e IDE! Meu pc não aguentou!
 services:
   zipkin:
     image: openzipkin/zipkin:2

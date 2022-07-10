@@ -3,18 +3,3 @@ server:
 
 zipkin:
   base-url: http://zipkin:9411/
-
-spring:
-  data:
-    mongodb:
-      uri: mongodb://test:7890123@db-avaliacao2-serie:27017/avaliacao2_serie
-#      user: test
-#      password: ${SENHA_DB:7890123}
-#      database: avaliacao2_serie
-#      uri: mongodb://test:7890123@locallhost:27018/avaliacao2_serie
-#      uri: mongodb://YourUsername:YourPasswordHere@127.0.0.1:27017/your-database-name
-  rabbitmq:
-    username: ${RABBIT_USERNAME:guest}
-    password: ${RABBIT_PASSWORD:guest}
-    host: localhost
-    port: 5672

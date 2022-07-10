@@ -3,20 +3,3 @@ server:
 
 zipkin:
   base-url: http://zipkin:9411/
-
-spring:
-  data:
-    mongodb:
-#       uri: mongodb://test:7890123@db-avaliacao2-catalog:27017/avaliacao2_catalog
-#      user: test
-#      password: ${SENHA_DB:7890123}
-#      database: avaliacao2_catalog
-      uri: mongodb://test:7890123@locallhost:27019/avaliacao2_catalog
-#      uri: mongodb://db-avaliacao2-catalog:27018/avaliacao2_catalog
-  rabbitmq:
-    username: ${RABBIT_USERNAME:guest}
-    password: ${RABBIT_PASSWORD:guest}
-    host: localhost
-    port: 5672
-
-message: Olá mundo - Catalog!

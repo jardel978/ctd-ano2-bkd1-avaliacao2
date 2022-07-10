@@ -687,13 +687,7 @@ $cloudConfigFiles/api-gateway-dev.yml,b\9\b996a285f9318e2eeec14128360c21848539f
 capi-gateway/src/main/java/com/jardelSilva/avaliacao1/apiGateway/config/security/SecurityConfig.java,0\d\0d0d46fee39cbbaea13d0fccfccb176de1396009
 ê
 `config-server/src/main/java/com/jardelSilva/avaliacao1/configServer/ConfigServerApplication.java,2\c\2ce951b2e497c538600a917a99e86e90a6ae56f5
-é
-^catalog-service/src/main/java/com/jardelsilva/catalog/service/controller/GenresController.java,7\2\727192c8242dde692dfc30f171e78053b518b3ea
-X
-(cloudConfigFiles/catalog-service-dev.yml,3\9\39be7a5a5ac4f222b8a9688958548a80a76ae060
 Ü
 Vmovie-service/src/main/java/com/jardelsilva/movie/service/MovieServiceApplication.java,5\c\5c118d1508c148d1d8657d4022861d35911dce66
 C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
-V
-&cloudConfigFiles/serie-service-dev.yml,7\0\700bfb6a3a3b090b391879065ed7924754832cb8
